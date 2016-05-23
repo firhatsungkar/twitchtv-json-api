@@ -24,6 +24,9 @@
 					if(data.stream) {
 						userObj.status = data.stream.game + ": " + data.stream.channel.status;
 						userObj.isOnline = true;
+					} else if(data.error) {
+						userObj.status = data.message;
+						userObj.isOnline = "Offline";
 					} else {
 						userObj.isOnline = false;
 						userObj.status = "Offline";
@@ -37,7 +40,7 @@
 		data: {
 			search: '',
 			status: '',
-			users: ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff","OgamingSC2","ESL_SC2"],
+			users: ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff","OgamingSC2","ESL_SC2","brunofin", "comster404"],
 			example: "some data",
 			result:[]
 		},
