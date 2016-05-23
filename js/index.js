@@ -14,7 +14,7 @@
 
 				$.getJSON('https://api.twitch.tv/kraken/users/'+user+'?callback=?', function(data) {
 					userObj.username = data.display_name;
-					userObj.link = data._links.self;
+					userObj.link = 'https://www.twitch.tv/'+data.name;
 					if(data.logo) {
 						userObj.avatar = data.logo;
 					}
