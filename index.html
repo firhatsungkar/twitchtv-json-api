@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Twitchtv JSON API</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Play|Metrophobic'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- HTML -->
+    <div class="container row">
+      <div class="twitchtv col-md-6 col-md-offset-4" id="app">
+        <header class="twitchtv--header text-center">
+          <h1>Twitch Streamers</h1>
+          <p class="lead">Some list of exciting twitch streamer</p>
+        </header>
+        <div class="twitchtv--search input-group">
+          <span class="input-group-addon"><i class="fa fa-search"></i></span>
+          <input type="text" class="form-control input-sp" placeholder="Search twitch user on this list ..."
+          v-model="search">
+        </div>
+        <nav class="twitchtv--nav">
+          <ul class="nav nav-tabs nav-justified">
+            <li class="active">
+              <a href="#" @click="status = ''">All <span class="badge">{{ result.length}}</span></a>
+            </li>
+            <li>
+              <a href="#" @click="status = true">Online <span class="badge">{{ userOnline.length }}</span></a>
+            </li>
+            <li>
+              <a href="#" @click="status = false">Offline <span class="badge">{{  userOffline.length }}</span></a>
+            </li>
+          </ul>
+        </nav>
+        <div class="twitchtv--media">
+          <ul class="media-list" v-for="user in result | filterBy status in 'isOnline' | filterBy search | orderBy 'username'" transition="staggered" stagger="100">
+            <li class="media" :class="{online: user.isOnline}">
+              <div class="media-left">
+                <img src="{{ user.avatar }}" class="media-object">
+              </div>
+              <div class="media-body">
+                <a href="{{ user.link }}" target="_blank">
+                  <h4 class="media-heading">{{ user.username }}</h4>
+                </a>
+                <p>{{ user.status }}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <footer class="twitch--footer well well-sm">
+          <p class="text-center">Code and Design by <a href="http://firhatsungkar.github.io/">Muhamad Firhat</a></p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- javascript -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js'></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

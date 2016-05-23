@@ -1,0 +1,120 @@
+html, * {
+  font-family: 'Metrophobic', 'Tahoma', sans-serif;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Play','Arial',sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.twitchtv--header {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.twitchtv--header::after {
+  display: block;
+  content: " ";
+  border-bottom: 5px solid #7550ba;
+  box-shadow: 0 1px 1px 1px #9275c8;
+}
+
+.twitchtv--header h1 {
+  color: #4b367c;
+  text-shadow: 0 3px 3px #ccbee5;
+  letter-spacing: 0.0875em;
+}
+
+.twitchtv--search {
+  margin-bottom: 10px;
+}
+
+.twitchtv--search span {
+  background: #fff;
+  color: #4b367c;
+}
+
+.twitchtv--search input[type=text] {
+  border-left: none;
+}
+
+.twitchtv--search span, .twitchtv--search input[type=text] {
+  border-radius: 30px;
+  border-color: #7550ba;
+}
+
+.twitchtv--search span:focus, .twitchtv--search input[type=text]:focus {
+  box-shadow: none;
+}
+
+.twitchtv--nav .nav-tabs li {
+  border: 1px solid #fff;
+  border-bottom: none;
+}
+
+.twitchtv--nav .nav-tabs li a {
+  background: #4b367c;
+  color: #fff;
+  border-bottom: none;
+}
+
+.twitchtv--nav .nav-tabs li a span {
+  background: #362758;
+}
+
+.twitchtv--nav .nav-tabs li a:hover, .twitchtv--nav .nav-tabs li a:active, .twitchtv--nav .nav-tabs li a:focus {
+  background: #201735;
+  border-bottom: none;
+}
+
+.twitchtv--nav .nav-tabs li.active a {
+  background: #201c2b;
+  color: #fff;
+  border-bottom: none;
+}
+
+.twitchtv--nav .nav-tabs li.active a:focus {
+  border: none;
+}
+
+.twitchtv--nav .nav-tabs li.active a:hover {
+  background: #201c2b;
+  color: #fff;
+  border-bottom: none;
+}
+
+.twitchtv--media {
+  padding: 25px;
+  margin: 0 1px 30px 1.5px;
+  background: #201c2b;
+  color: #fff;
+  border-radius: 0 0em 0.3em 0.3em;
+}
+
+.twitchtv--media .media {
+  padding: 10px;
+  border: 1px solid #4b367c;
+  border-radius: 0.5em;
+  box-shadow: 0 0 3px 1px rgba(96, 69, 160, 0.7);
+}
+
+.twitchtv--media .online {
+  background: rgba(117, 80, 186, 0.3);
+}
+
+.twitchtv--media .media-object {
+  width: 50px;
+  height: 50px;
+}
+
+.staggered-transition {
+  transition: all .5s ease;
+  overflow: hidden;
+}
+
+.staggered-enter, .staggered-leave {
+  opacity: 0;
+  height: 0;
+}
